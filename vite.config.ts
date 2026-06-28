@@ -1,11 +1,51 @@
 import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
 import path from 'path'
-import { defineConfig } from 'vite'
+import { defineConfig, lazyPlugins } from 'vite-plus'
 import { htmlPlugin } from './plugins/html-plugin.ts'
 
 // https://vite.dev/config/
 export default defineConfig({
+  fmt: {
+    printWidth: 100,
+    semi: false,
+    singleQuote: true,
+    arrowParens: 'avoid',
+    singleAttributePerLine: true,
+    sortPackageJson: false,
+    ignorePatterns: [
+      'dist/**',
+      'index.html',
+      'src/components/common/svg-icons.tsx',
+      'src/components/ui/**',
+      '**/*.css',
+    ],
+  },
+  lint: {
+    ignorePatterns: ['dist/**', 'src/components/ui/**'],
+    jsPlugins: [{ name: 'vite-plus', specifier: 'vite-plus/oxlint-plugin' }],
+    options: {
+      typeAware: true,
+      typeCheck: true,
+    },
+    categories: {
+      correctness: 'error',
+      suspicious: 'warn',
+    },
+    rules: {
+      'vite-plus/prefer-vite-plus-imports': 'error',
+      'no-underscore-dangle': ['warn', { allow: ['__DATE__'] }],
+      'typescript/consistent-type-imports': 'error',
+      'typescript/no-explicit-any': 'off',
+    },
+  },
+  staged: {
+    '*.{js,ts,jsx,tsx}': 'vp lint',
+    '*': 'vp fmt --no-error-on-unmatched-pattern',
+  },
+  test: {
+    passWithNoTests: true,
+  },
   define: {
     __DATE__: JSON.stringify(new Date().toISOString().slice(0, 10)),
   },
@@ -26,7 +66,7 @@ export default defineConfig({
       localsConvention: 'camelCaseOnly',
     },
   },
-  plugins: [react(), tailwindcss(), htmlPlugin()],
+  plugins: lazyPlugins(() => [react(), tailwindcss(), htmlPlugin()]),
   build: {
     rolldownOptions: {
       output: {

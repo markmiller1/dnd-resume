@@ -1,5 +1,5 @@
-import type { Plugin } from 'vite'
-import { loadEnv } from 'vite'
+import type { Plugin } from 'vite-plus'
+import { loadEnv } from 'vite-plus'
 
 const env = loadEnv(process.env.NODE_ENV!, process.cwd(), '')
 
