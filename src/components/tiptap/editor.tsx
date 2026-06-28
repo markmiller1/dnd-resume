@@ -5,8 +5,6 @@ import { useImperativeHandle } from 'react'
 
 import { TiptapMenu } from '#tiptap/menu'
 
-import '#tiptap/tiptap.css'
-
 const extensions = [StarterKit.configure({ trailingNode: false })]
 
 export type TiptapRef = Ref<{
