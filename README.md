@@ -13,8 +13,4 @@
   <p>For Windows 11 Chrome users: Select "Save as PDF" as the destination when printing.</p>
   <img src=".github/4.png" alt="print" height="400">
 
-  <h2>Project Growth</h2>
-  <a href="https://star-history.com/#Arman19941113/dnd-resume&Date">
-    <img src="https://api.star-history.com/svg?repos=Arman19941113/dnd-resume&type=Date" alt="star-history">
-  </a>
 </div>
