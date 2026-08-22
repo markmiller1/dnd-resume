@@ -1,16 +1,18 @@
-<div align="center">
-  <h2>Build Your Resume Online</h2>
-  <p>dnd-resume is a free and open-source resume builder that helps you create professional resumes with ease.</p>
-  <img src=".github/1.png" alt="edit">
+# dnd-resume — Build Your Resume Online
 
-  <h2>Preview</h2>
-  <p>Get a real-time preview of your resume as you build it.</p>
-  <img src=".github/2.png" alt="preview">
+A local-first, drag-and-drop resume builder for creating and exporting
+professional PDF resumes directly in your browser.
 
-  <h2>Export to PDF</h2>
-  <p>Seamlessly export your resume to PDF format using the browser's built-in print functionality.</p>
-  <img src=".github/3.png" alt="print" height="400">
-  <p>For Windows 11 Chrome users: Select "Save as PDF" as the destination when printing.</p>
-  <img src=".github/4.png" alt="print" height="400">
+[简体中文](./README.zh-CN.md) · [Live Demo](https://dnd-resume.cn)
 
-</div>
+## Usage
+
+1. Open the [Live Demo](https://dnd-resume.cn).
+2. Drag resume sections to reorder them, then edit their content and styles.
+3. Click **View** to preview your resume.
+4. Click **Print** and choose **Save as PDF** in your browser's print dialog.
+
+You can also use **Import Config** and **Export Config** to back up or move
+your resume configuration.
+
+<img src=".github/assets/shot-en.png" alt="dnd-resume">
