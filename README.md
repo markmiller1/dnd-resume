@@ -15,4 +15,4 @@ professional PDF resumes directly in your browser.
 You can also use **Import Config** and **Export Config** to back up or move
 your resume configuration.
 
-<img src=".github/assets/shot-en.png" alt="dnd-resume">
+<img src=".github/assets/shot-en.jpg" alt="dnd-resume">
