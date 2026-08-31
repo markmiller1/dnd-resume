@@ -34,7 +34,6 @@ export default defineConfig({
     },
     rules: {
       'vite-plus/prefer-vite-plus-imports': 'error',
-      'no-underscore-dangle': ['warn', { allow: ['__DATE__'] }],
       'typescript/consistent-type-imports': 'error',
       'typescript/no-explicit-any': 'off',
     },
@@ -45,9 +44,6 @@ export default defineConfig({
   },
   test: {
     passWithNoTests: true,
-  },
-  define: {
-    __DATE__: JSON.stringify(new Date().toISOString().slice(0, 10)),
   },
   server: {
     open: true,
