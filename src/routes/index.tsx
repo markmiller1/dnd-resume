@@ -1,4 +1,4 @@
-import { Navigate, createBrowserRouter } from 'react-router'
+import { createBrowserRouter } from 'react-router'
 
 import { RootLayout } from '@/routes/layouts/root-layout'
 import { ViewPage } from '@/routes/view/view-page'
@@ -17,19 +17,11 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: (
-          <Navigate
-            to="/editor"
-            replace
-          />
-        ),
+        lazy: loadEditorRoute,
       },
       {
         path: 'editor',
-        lazy: async () => {
-          const { EditorPage } = await import('@/routes/editor/editor-page')
-          return { Component: EditorPage }
-        },
+        lazy: loadEditorRoute,
       },
       { path: 'view', element: <ViewPage /> },
       { path: 'print', element: <PrintPage /> },
@@ -37,3 +29,8 @@ export const router = createBrowserRouter([
     ],
   },
 ])
+
+async function loadEditorRoute() {
+  const { EditorPage } = await import('@/routes/editor/editor-page')
+  return { Component: EditorPage }
+}
